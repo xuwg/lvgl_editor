@@ -8,8 +8,9 @@
 		flex_flow="row"
 		style_bg_opa="0"
 		style_border_width="0"
-		style_pad_all="5"
-		style_width="120px"
+		style_pad_all="0"
+        style_margin_all="0"
+		style_width="content"
 		style_height="content"
 	>
         <lv_label text="Offline" style_text_color="0x333" clickable="true">
