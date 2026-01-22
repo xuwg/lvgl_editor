@@ -2,25 +2,29 @@
 	<api>
 		<!-- Add <enumdefs> here -->
 	</api>
-
 	<consts>
 		<!-- Add <px>, <int>, <color> etc here -->
+		<color name="green" value="0x00ff00"/>
+		<color name="day_bg" value="0xf7f7f7"/>
+		<color name="day_fg" value="0x222222"/>
+		<color name="night_bg" value="0x131d1d"/>
+		<color name="night_fg" value="0xffffff"/>
 	</consts>
-
 	<styles>
-		<!-- Add <style> tags here -->
+		<style name="btn_day" bg_color="0xecedee" text_color="0x000000"/>
+		<style name="btn_night" bg_color="0x2a3435"/>
 	</styles>
-
+	</styles>
 	<subjects>
 		<!-- Add <int>, <string>, or <float> subjects here -->
 	</subjects>
-
 	<images>
 		<!-- Add <file> or <data> tags here -->
+		<!-- <file name="flower" src_path="images/orange-flower.png" /> -->
+		<!-- <file name="wifi" src_path="images/wifi-icon.png" /> -->
+		<!-- 图片已在 C++ 代码中注册，不需要在这里定义 -->
 	</images>
-
 	<fonts>
 		<!-- Add <bin> , <tiny_ttf>, <freetype> tags here -->
-		<bin name="font_medium" as_file="false" src_path="fonts/Montserrat_Medium.ttf" size="20" bpp="4" />
 	</fonts>
 </globals>
