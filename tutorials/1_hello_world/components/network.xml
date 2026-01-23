@@ -5,6 +5,8 @@
         <color name="day_fg" value="0x222222"/>
         <color name="night_bg" value="0x131d1d"/>
         <color name="night_fg" value="0xffffff"/>
+        <const name="tabview_tab_margin_left" value="10"/>
+        <const name="tabview_tab_margin_right" value="10"/>
     </consts>
     <styles>
         <style name="style_day"
@@ -72,83 +74,99 @@
                         <!-- <lv_tabview-tab_button style_border_width="0" /> -->
                         <style name="tabview_tabbar_day" />
                     </lv_tabview-tab_bar>
-                    <lv_tabview-tab text="Network1" name="Network1" flex_flow="column">
-                        <style name="tabview_tab_day" />
-                        <lv_obj width="100%" height="60" flex_flow="row" style_pad_all="0" style_flex_cross_place="center">
-                            <lv_label text="Allow Ethernet Download &amp; Upload" height="content" style_bg_color="0xff0000" style_margin_left="10"/>
-                            <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                            <lv_switch style_bg_color="0x00ff00" width="60" height="30" style_margin_right="10"/>
-                        </lv_obj>
-                        <!-- Static ip -->
-                        <lv_obj width="100%" flex_grow="5" flex_flow="column" style_border_width="2">
-                            <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0">
-                                <lv_label text="Static IP" style_pad_all="0" />
-                            </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0" style_border_width="0">
-                                <lv_label text="IP Address" height="100%"/>
+                    <lv_tabview-tab text="Network1" name="Network1" flex_flow="column" style_pad_all="0">
+                        <lv_obj width="100%" height="100%" flex_flow="column" style_pad_all="10" style_border_width="0" style_radius="0">
+                            <style name="tabview_tab_day" />
+                            <lv_obj width="100%" height="60" flex_flow="row" style_pad_all="0" style_flex_cross_place="center">
+                                <lv_label text="Allow Ethernet Download &amp; Upload" height="content" style_bg_color="0xff0000" style_margin_left="#tabview_tab_margin_left"/>
                                 <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <ip_input width="300" height="100%" />
+                                <lv_switch style_bg_color="0x00ff00" width="60" height="30" style_margin_right="#tabview_tab_margin_right"/>
                             </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0" style_border_width="0">
-                                <lv_label text="Subnet Mask" height="100%"/>
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <ip_input width="300" height="100%" />
+                            <!-- Static ip -->
+                            <lv_obj width="100%" flex_grow="5" flex_flow="column" style_border_width="2" style_pad_all="0">
+                                <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0" style_border_side="bottom" style_border_width="2" style_radius="0" style_flex_cross_place="center">
+                                    <style name="panel_day" />
+                                    <lv_label text="Static IP" style_margin_left="#tabview_tab_margin_left" height="content" style_pad_all="0" style_text_font="montserrat_16_bold"/>
+                                    <lv_obj flex_grow="1" style_pad_all="0" style_bg_opa="0" style_border_width="0" height="100%"/>
                             </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0">
-                                <lv_label text="Default Gateway" height="100%"/>
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <ip_input width="300" height="100%" />
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0" style_border_width="0" style_flex_cross_place="center">
+                                    <lv_label text="IP Address" height="content" style_margin_left="#tabview_tab_margin_left"/>
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <ip_input width="300" height="100%" style_margin_right="#tabview_tab_margin_right"/>
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0" style_border_width="0" style_flex_cross_place="center">
+                                    <lv_label text="Subnet Mask" height="content" style_margin_left="#tabview_tab_margin_left"/>
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <ip_input width="300" height="100%" style_margin_right="#tabview_tab_margin_right"/>
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0" style_flex_cross_place="center">
+                                    <lv_label text="Default Gateway" height="content" style_margin_left="#tabview_tab_margin_left"/>
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <ip_input width="300" height="100%" style_margin_right="#tabview_tab_margin_right" />
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"  style_border_width="0" style_flex_cross_place="center">
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <lv_button  height="30" style_radius="0" style_width="100" style_margin_right="#tabview_tab_margin_right" style_pad_all="0">
+                                        <style name="btn_day" />
+                                        <lv_label text="SAVE" style_text_color="0x007c22" style_align="center"/>
+                                    </lv_button>
+                                </lv_obj>
                             </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"  style_border_width="0">
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <lv_button style_bg_color="0x00ff00" height="30">
-                                    <lv_label text="SAVE" style_text_color="0xffffff"/>
-                                </lv_button>
+                            <!-- dhcp -->
+                            <lv_obj width="100%" flex_grow="3" flex_flow="column" style_border_width="2" style_pad_all="0">
+                                <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0" style_border_side="bottom" style_border_width="2" style_radius="0" style_flex_cross_place="center">
+                                    <style name="panel_day" />
+                                    <lv_label text="DHCP" style_margin_left="#tabview_tab_margin_left" height="content" style_pad_all="0" style_text_font="montserrat_16_bold" />
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <lv_switch style_bg_color="0x00ff00" height="30" style_margin_right="#tabview_tab_margin_right"/>
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0" style_flex_cross_place="center">
+                                    <lv_label text="Host Name" height="content" style_margin_left="#tabview_tab_margin_left"/>
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <ip_input width="300" height="100%" style_margin_right="#tabview_tab_margin_right"/>
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"  style_border_width="0" style_flex_cross_place="center">
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <lv_button  height="30" style_radius="0" style_width="100" style_margin_right="#tabview_tab_margin_right" style_pad_all="0">
+                                        <style name="btn_day" />
+                                        <lv_label text="SAVE" style_text_color="0x007c22" style_align="center"/>
+                                    </lv_button>
+                                </lv_obj>
                             </lv_obj>
-                        </lv_obj>
-                        <!-- dhcp -->
-                        <lv_obj width="100%" flex_grow="3" flex_flow="column">
-                            <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0">
-                                <lv_label text="DHCP" height="100%"/>
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <lv_switch style_bg_color="0x00ff00" height="30"/>
+                            <!-- dns -->
+                            <lv_obj width="100%" flex_grow="4" flex_flow="column" style_border_width="2" style_pad_all="0">
+                                <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0" style_border_side="bottom" style_border_width="2" style_radius="0" style_flex_cross_place="center">
+                                    <style name="panel_day" />
+                                    <lv_label text="DNS" style_margin_left="#tabview_tab_margin_left" height="content" style_pad_all="0" style_text_font="montserrat_16_bold"/>
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <lv_switch style_bg_color="0x00ff00" height="30" style_margin_right="#tabview_tab_margin_right"/>
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0" style_margin_left="#tabview_tab_margin_left" style_margin_right="#tabview_tab_margin_right" style_flex_cross_place="center">
+                                    <style name="panel_day" />
+                                    <lv_label text="MAC:    Ethernet1    00:01:23:44:34:00" style_pad_left="10" />
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
                             </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0">
-                                <lv_label text="Host Name" height="100%"/>
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <ip_input width="300" height="100%" />
-                            </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"  style_border_width="0">
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <lv_button style_bg_color="0x00ff00" height="30">
-                                    <lv_label text="SAVE" style_text_color="0xffffff"/>
-                                </lv_button>
-                            </lv_obj>
-                        </lv_obj>
-                        <!-- dns -->
-                        <lv_obj width="100%" flex_grow="4" flex_flow="column">
-                            <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0">
-                                <lv_label text="DNS" height="100%"/>
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <lv_switch style_bg_color="0x00ff00" height="30"/>
-                            </lv_obj>
-                            <lv_label text="MAC:    Ethernet1    00:01:23:44:34:00" style_pad_all="0" />
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0">
-                                <lv_label text="IP Address (DNS)" height="100%"/>
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <ip_input width="300" height="100%" />
-                            </lv_obj>
-                            <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"  style_border_width="0">
-                                <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                                <lv_button style_bg_color="0x00ff00" height="30">
-                                    <lv_label text="SAVE" style_text_color="0xffffff"/>
-                                </lv_button>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"   style_border_width="0">
+                                    <lv_label text="IP Address (DNS)" height="content" style_margin_left="#tabview_tab_margin_left"/>
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <ip_input width="300" height="100%" style_margin_right="#tabview_tab_margin_right"/>
+                                </lv_obj>
+                                <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0"  style_border_width="0">
+                                    <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
+                                    <lv_button  height="30" style_radius="0" style_width="100" style_margin_right="#tabview_tab_margin_right" style_pad_all="0">
+                                        <style name="btn_day" />
+                                        <lv_label text="SAVE" style_text_color="0x007c22" style_align="center"/>
+                                    </lv_button>
+                                </lv_obj>
                             </lv_obj>
                         </lv_obj>
                     </lv_tabview-tab>
-                    <lv_tabview-tab text="Network2" name="Network2">
+                    <lv_tabview-tab text="Network2" name="Network2" style_pad_all="0">
                         <!-- Network2内容 -->
-                        <lv_label text="hello2" style_pad_all="10" />
+                        <lv_obj width="100%" height="100%" flex_flow="column" style_pad_all="0" style_border_width="0" style_radius="0">
+                            <style name="tabview_tab_day" />
+                            <lv_label text="This is Network2 tab content." style_pad_all="10" />
+                        </lv_obj>
                     </lv_tabview-tab>
                     <lv_tabview-tab text="Network3" name="Network3">
                         <!-- Network3内容 -->
