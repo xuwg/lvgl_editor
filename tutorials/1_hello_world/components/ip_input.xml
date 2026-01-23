@@ -18,19 +18,20 @@
     </styles>
     <view extends="lv_obj" flex_flow="row" 
           width="$width"
-          height="50"
-          style_bg_color="0xffffff"
+          height="content"
           style_border_width="1"
           style_border_color="0xcccccc"
+          style_pad_all="0"
           style_radius="5"
-          style_pad_all="5" 
-          style_flex_cross_place="center">
+          style_flex_cross_place="center" >
+        <lv_label text="" height="100%" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0" />
+
         <!-- 第一段 (0-255) -->
-        <lv_textarea height="40"
+        <lv_textarea height="content"
                  flex_grow="1"
                  text="$ip1"
                  one_line="true"
-                 style_length="3"
+                 style_length="3" style_pad_all="0" style_bg_color="0xff0000" style_bg_opa="0"
                  >
             <event_cb callback="ip_textarea_insert_cb" trigger="insert" />
             <style name="ta_no_border" />
@@ -39,13 +40,13 @@
             <style name="ta_no_border" selector="focus_key" />
         </lv_textarea>
         <!-- 分隔符 . -->
-        <lv_label text="." height="100%" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0" style_pad_top="10" style_pad_bottom="10" />
+        <lv_label text="." height="content" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0" />
         <!-- 第二段 (0-255) -->
-        <lv_textarea height="40"
+        <lv_textarea height="content"
                  flex_grow="1"
                  text="$ip2"
                  one_line="true"
-                 style_length="3"
+                 style_length="3" style_pad_all="0"
                  >
             <event_cb callback="ip_textarea_insert_cb" trigger="insert" />
             <style name="ta_no_border" />
@@ -54,13 +55,13 @@
             <style name="ta_no_border" selector="focus_key" />
         </lv_textarea>
         <!-- 分隔符 . -->
-        <lv_label text="." height="100%" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0" style_pad_top="10" style_pad_bottom="10" />
+        <lv_label text="." height="content" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0"  />
         <!-- 第三段 (0-255) -->
-        <lv_textarea height="40"
+        <lv_textarea height="content"
                  flex_grow="1"
                  text="$ip3"
                  one_line="true"
-                style_length="3"
+                style_length="3" style_pad_all="0"
                  >
             <event_cb callback="ip_textarea_insert_cb" trigger="insert" />
             <style name="ta_no_border" />
@@ -69,13 +70,13 @@
             <style name="ta_no_border" selector="focus_key" />
         </lv_textarea>
         <!-- 分隔符 . -->
-        <lv_label text="." height="100%" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0" style_pad_top="10" style_pad_bottom="10" />
+        <lv_label text="." height="content" style_text_color="0x333333" style_bg_color="0xff0000" style_bg_opa="0"  />
         <!-- 第四段 (0-255) -->
-        <lv_textarea height="40"
+        <lv_textarea height="content"
                  flex_grow="1"
                  text="$ip4"
                  one_line="true"
-                 style_length="3"
+                 style_length="3" style_pad_all="0"
                  >
             <event_cb callback="ip_textarea_insert_cb" trigger="insert" />
             <style name="ta_no_border" />
