@@ -14,7 +14,6 @@
 		<style name="btn_day" bg_color="0xecedee" text_color="0x000000"/>
 		<style name="btn_night" bg_color="0x2a3435"/>
 	</styles>
-	</styles>
 	<subjects>
 		<!-- Add <int>, <string>, or <float> subjects here -->
 	</subjects>
