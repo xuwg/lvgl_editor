@@ -24,7 +24,6 @@
         bg_color="#night_bg"
         text_color="#night_fg"
         border_color="#2d3738"/>
-
         <style name="panel_day"
         bg_color="#day_bg"
         text_color="#day_fg"
@@ -33,8 +32,12 @@
         bg_color="#night_bg"
         text_color="#night_fg"
         border_color="#2a3435"/>
-
-        
+        <style name="tabview_tabbar_day" bg_color="0xf7f7f7" text_color="#day_fg"/>
+        <style name="tabview_tabbar_night" bg_color="0x131d1d" text_color="#night_fg"/>
+        <style name="tabview_tab_day" bg_color="0xffffff"/>
+        <style name="tabview_tab_night" bg_color="0x010c0a"/>
+        <style name="btn_day" bg_color="0xecedee" text_color="0x000000"/>
+        <style name="btn_night" bg_color="0x2a3435"/>
     </styles>
     <view extends="lv_obj" name="main" width="100%" height="100%" 
         flex_flow="column" style_pad_all="0" style_pad_row="0">
@@ -54,26 +57,33 @@
             style_pad_all="0" flex_flow="row_reverse" style_border_width="0" style_pad_column="0">
             <!-- right_panel -->
             <lv_obj name="right_panel" flex_grow="1" flex_flow="column" style_border_width="0"
-                width="100%" height="100%" style_pad_all="0">
+                width="100%" height="100%" style_pad_all="0" style_pad_row="0">
                 <!-- 面包屑导航栏和返回按钮 -->
                 <lv_obj flex_flow="row" width="100%" height="50" style_pad_all="0" style_border_width="2" style_border_side="bottom" style_radius="0">
-                <style name="panel_day" />
-                    <breadcrumb  flex_grow="1" current_index="0" style_pad_top="15"  style_pad_left="10" top_pad="0" path=""/>
+                    <style name="panel_day" />
+                    <breadcrumb  flex_grow="1" current_index="0" style_pad_top="10"  style_pad_left="10" top_pad="0" path=""/>
                     <lv_button height="40" style_margin_top="2" style_margin_right="10" style_radius="5">
                         <style name="btn_day" />
                         <lv_label text="&lt;  Return" />
                     </lv_button>
                 </lv_obj>
                 <lv_tabview width="100%" flex_grow="1" tab_bar_position="top" height="100%">
+                    <lv_tabview-tab_bar style_pad_right="300">
+                        <!-- <lv_tabview-tab_button style_border_width="0" /> -->
+                        <style name="tabview_tabbar_day" />
+                    </lv_tabview-tab_bar>
                     <lv_tabview-tab text="Network1" name="Network1" flex_flow="column">
-                        <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0">
-                            <lv_label text="Allow Ethernet Download Upload" height="100%"/>
+                        <style name="tabview_tab_day" />
+                        <lv_obj width="100%" height="60" flex_flow="row" style_pad_all="0" style_flex_cross_place="center">
+                            <lv_label text="Allow Ethernet Download &amp; Upload" height="content" style_bg_color="0xff0000" style_margin_left="10"/>
                             <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
-                            <lv_switch style_bg_color="0x00ff00" height="30"/>
+                            <lv_switch style_bg_color="0x00ff00" width="60" height="30" style_margin_right="10"/>
                         </lv_obj>
                         <!-- Static ip -->
-                        <lv_obj width="100%" flex_grow="5" flex_flow="column">
-                            <lv_label text="Static IP" style_pad_all="0" />
+                        <lv_obj width="100%" flex_grow="5" flex_flow="column" style_border_width="2">
+                            <lv_obj width="100%" height="40" flex_flow="row" style_pad_all="0">
+                                <lv_label text="Static IP" style_pad_all="0" />
+                            </lv_obj>
                             <lv_obj width="100%" flex_grow="1" flex_flow="row" style_pad_all="0" style_border_width="0">
                                 <lv_label text="IP Address" height="100%"/>
                                 <lv_obj flex_grow="1" style_bg_opa="0" style_border_width="0" height="100%"/>
